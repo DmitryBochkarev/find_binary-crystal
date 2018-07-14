@@ -1,0 +1,9 @@
+name: find_binary
+version: 0.1.0
+
+authors:
+  - Dmitry Bochkarev <dimabochkarev@gmail.com>
+
+crystal: 0.25.1
+
+license: MIT
