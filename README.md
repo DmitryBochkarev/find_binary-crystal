@@ -35,8 +35,8 @@ build_in_binary = File.join(Dir.current, "vendor/ag")
 find_the_silver_searcher = FindBinary.new("ag")
 find_the_silver_searcher.append_path(build_in_binary)
 silver_searcher = find_the_silver_searcher.find
-puts "ag found: #{silver_searcher}"
 
+puts "ag found: #{silver_searcher}"
 puts `#{silver_searcher.not_nil!} --version`
 ```
 
