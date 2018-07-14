@@ -1,5 +1,7 @@
 # find_binary [![GitHub release](https://img.shields.io/github/release/DmitryBochkarev/find_binary-crystal.svg)](https://github.com/DmitryBochkarev/find_binary-crystal/releases) [![Build Status](https://travis-ci.org/DmitryBochkarev/find_binary-crystal.svg?branch=master)](https://travis-ci.org/DmitryBochkarev/find_binary-crystal)
 
+[docs](https://dmitrybochkarev.github.io/find_binary-crystal/FindBinary.html)
+
 Simple library that helps to find path to a executable.
 
 ## Installation
