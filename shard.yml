@@ -1,5 +1,6 @@
 name: find_binary
 version: 0.1.0
+description: Simple library that helps to find path to a executable.
 
 authors:
   - Dmitry Bochkarev <dimabochkarev@gmail.com>
