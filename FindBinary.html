@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="HEAD">
+<meta name="crystal_docs.project_name" content="find_binary">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="find_binary">
+  <title>FindBinary - find_binary HEAD</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          find_binary
+        </a>
+      </h1>
+
+      <span class="project-version">
+        HEAD
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" current" data-id="find_binary/FindBinary" data-name="findbinary">
+      <a href="FindBinary.html">FindBinary</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> FindBinary
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="FindBinary.html">FindBinary</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p><code><a href="FindBinary.html">FindBinary</a></code> finds a binary in a system path or a path provided.</p>
+
+<p>Find crystal binary in a system path.</p>
+
+<pre><code class="language-crystal"><span class="t">FindBinary</span>.find(<span class="s">&quot;crystal&quot;</span>) <span class="c"># =&gt; /usr/bin/crystal</span></code></pre>
+
+<p>Alternatively, you can provide paths in which binary should be
+searched instead of a system path.</p>
+
+<pre><code class="language-crystal">build_in_binary <span class="o">=</span> <span class="t">File</span>.join(<span class="t">Dir</span>.current, <span class="s">&quot;vendor/ag&quot;</span>)
+find_the_silver_searcher <span class="o">=</span> <span class="t">FindBinary</span>.<span class="k">new</span>(<span class="s">&quot;ag&quot;</span>, [build_in_binary])
+silver_searcher <span class="o">=</span> find_the_silver_searcher.find <span class="c"># =&gt; ./vender/ag</span></code></pre>
+
+<p>Or, if you vendor a binary, and want to use this as a fallback,
+you can append a vendor path.</p>
+
+<pre><code class="language-crystal">build_in_binary <span class="o">=</span> <span class="t">File</span>.join(<span class="t">Dir</span>.current, <span class="s">&quot;vendor/ag&quot;</span>)
+find_the_silver_searcher <span class="o">=</span> <span class="t">FindBinary</span>.<span class="k">new</span>(<span class="s">&quot;ag&quot;</span>)
+find_the_silver_searcher.append_path(build_in_binary)
+silver_searcher <span class="o">=</span> find_the_silver_searcher.find <span class="c"># =&gt; /usr/bin/ag</span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/DmitryBochkarev/find_binary-crystal/blob/85160bc1d06e9b3bff1a865c9527fdfe1c454ca0/src/find_binary.cr#L26" target="_blank">
+        find_binary.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/DmitryBochkarev/find_binary-crystal/blob/85160bc1d06e9b3bff1a865c9527fdfe1c454ca0/src/find_binary/version.cr#L1" target="_blank">
+        find_binary/version.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.0&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(bin,paths:Array(String)?=nil)-class-method" class="signature"><strong>.new</strong>(bin, paths : Array(String)? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Creates a new finder for the <em>bin</em>, allowing to override the search <em>paths</em>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#find(bin:String):String?-class-method" class="signature"><strong>.find</strong>(bin : String) : String?</a>
+        
+          <div class="summary"><p>Finds a <em>bin</em> in a system path.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#append_path(*paths)-instance-method" class="signature"><strong>#append_path</strong>(*paths)</a>
+        
+          <div class="summary"><p>Append <em>paths</em> to the end of a search path.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find:String?-instance-method" class="signature"><strong>#find</strong> : String?</a>
+        
+          <div class="summary"><p>Find the binary in a search path.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#prepend_path(*paths)-instance-method" class="signature"><strong>#prepend_path</strong>(*paths)</a>
+        
+          <div class="summary"><p>Prepend <em>paths</em> to the head of a search path.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(bin,paths:Array(String)?=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(bin, paths : Array(String)? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new(bin,paths:Array(String)?=nil)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new finder for the <em>bin</em>, allowing to override the search <em>paths</em>.</p>
+
+<pre><code class="language-crystal">build_in_binary <span class="o">=</span> <span class="t">File</span>.join(<span class="t">Dir</span>.current, <span class="s">&quot;vendor/ag&quot;</span>)
+find_the_silver_searcher <span class="o">=</span> <span class="t">FindBinary</span>.<span class="k">new</span>(<span class="s">&quot;ag&quot;</span>, [build_in_binary])</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/DmitryBochkarev/find_binary-crystal/blob/85160bc1d06e9b3bff1a865c9527fdfe1c454ca0/src/find_binary.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="find(bin:String):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>find</strong>(bin : String) : String?
+
+        <a class="method-permalink" href="#find(bin:String):String?-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Finds a <em>bin</em> in a system path.</p>
+
+<p>Using the "PATH" environment variable, to determines where to search.</p>
+
+<pre><code class="language-crystal"><span class="t">FindBinary</span>.find(<span class="s">&quot;crystal&quot;</span>) <span class="c"># =&gt; /usr/bin/crystal</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/DmitryBochkarev/find_binary-crystal/blob/85160bc1d06e9b3bff1a865c9527fdfe1c454ca0/src/find_binary.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="append_path(*paths)-instance-method">
+      <div class="signature">
+        
+        def <strong>append_path</strong>(*paths)
+
+        <a class="method-permalink" href="#append_path(*paths)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Append <em>paths</em> to the end of a search path.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/DmitryBochkarev/find_binary-crystal/blob/85160bc1d06e9b3bff1a865c9527fdfe1c454ca0/src/find_binary.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>find</strong> : String?
+
+        <a class="method-permalink" href="#find:String?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Find the binary in a search path.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/DmitryBochkarev/find_binary-crystal/blob/85160bc1d06e9b3bff1a865c9527fdfe1c454ca0/src/find_binary.cr#L57" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="prepend_path(*paths)-instance-method">
+      <div class="signature">
+        
+        def <strong>prepend_path</strong>(*paths)
+
+        <a class="method-permalink" href="#prepend_path(*paths)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Prepend <em>paths</em> to the head of a search path.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/DmitryBochkarev/find_binary-crystal/blob/85160bc1d06e9b3bff1a865c9527fdfe1c454ca0/src/find_binary.cr#L73" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
